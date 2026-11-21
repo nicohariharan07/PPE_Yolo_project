@@ -1,0 +1,6 @@
+coat
+glasses
+gloves
+no_coat
+no_glasses
+no_gloves

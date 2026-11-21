@@ -1,0 +1,33 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "name": "coat"
+    },
+    {
+      "id": 1,
+      "name": "glasses"
+    },
+    {
+      "id": 2,
+      "name": "gloves"
+    },
+    {
+      "id": 3,
+      "name": "no_coat"
+    },
+    {
+      "id": 4,
+      "name": "no_glasses"
+    },
+    {
+      "id": 5,
+      "name": "no_gloves"
+    }
+  ],
+  "info": {
+    "year": 2025,
+    "version": "1.0",
+    "contributor": "Label Studio"
+  }
+}

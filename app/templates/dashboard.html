@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PPE Violations Dashboard</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 24px; }
+      table { border-collapse: collapse; width: 100%; }
+      th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+      th { background: #f4f4f4; }
+      img { max-width: 220px; height: auto; border: 1px solid #ccc; }
+    </style>
+  </head>
+  <body>
+    <h1>PPE Violations</h1>
+    <p>Shows recent detected violations and saved frames.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Timestamp</th>
+          <th>Missing PPE</th>
+          <th>Confidence</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>
+            {% if row[1] %}
+            <img src="/violations/{{ row[1].split('/')[-1] }}" alt="violation">
+            {% else %}
+            -
+            {% endif %}
+          </td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          <td>{{ "%.2f"|format(row[4] or 0) }}</td>
+          <td>{{ row[5] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
